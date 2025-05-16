@@ -1,0 +1,23 @@
+.selection-message {
+  font-size: 1.5rem;
+  color: #007bff;
+  text-align: center;
+  margin-top: 2rem;
+  animation: pulse 1s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(35vh);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

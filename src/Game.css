@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-title {
+  display: flex;
+  justify-content: center;
+  color: #a10303;
+  font: 600 2.8rem "Gill Sans", "Gill Sans MT";
+  margin-top: 1.2rem;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 9px;
+  align-items: center;
+  justify-content: center;
+  transform: translate(82%, 10vh);
+  background-color: rgb(0, 26, 255);
+  width: 520px;
+  height: auto;
+  padding: 0.8rem 0 3.2rem 0;
+}
+
+.title-name {
+  display: flex;
+  justify-content: center;
+  font: 550 1.9rem "Times";
+  color: black;
+  margin-bottom: 8px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-border {
+  /* background-color: antiquewhite; */
+  width: auto;
+  height: 300px;
+  border: none;
+  outline: none;
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 94px;
+  width: 94px;
+  margin: 2px;
+  padding: 0.4rem;
+  background-color: aqua;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boxes:hover {
+  transform: translateY(1px);
+  transition: transform 0.2s ease;
+}
+
+.symbols {
+  font: italic 600 1.7rem Georgia;
+}
