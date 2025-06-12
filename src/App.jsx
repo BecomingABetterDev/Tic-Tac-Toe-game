@@ -73,10 +73,14 @@ function App() {
     setCount(0);
     setLock(false);
     setWinner("");
+    setSelectingFirstPlayer(true);
     setPage("game");
-    const randomCount = Math.floor(Math.random() * 2); // 0 or 1
-    setCount(randomCount);
-    setFirstPlayer(randomCount === 0 ? players.X : players.O);
+    setTimeout(() => {
+      const randomCount = Math.floor(Math.random() * 2); //0 or 1
+      setCount(randomCount);
+      setFirstPlayer(randomCount === 0 ? players.X : players.O);
+      setSelectingFirstPlayer(false);
+    }, 2000);
   };
 
   const startNewGame = () => {

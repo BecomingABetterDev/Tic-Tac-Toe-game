@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Popup.css";
 
 const WinPopup = ({ resetGame, startNewGame, winner }) => {
-  let isDraw = winner === "NoONe";
+  let isDraw = winner === "NoOne";
   return (
     <>
       <div className="popup">
@@ -14,7 +14,7 @@ const WinPopup = ({ resetGame, startNewGame, winner }) => {
             <>
               <span className="winner-span">{winner}</span> Won the game
             </>
-          )}{" "}
+          )}
         </p>
         <div className="btn-container">
           <button
