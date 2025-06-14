@@ -13,6 +13,7 @@ function App() {
   const [players, setPlayers] = useState({ X: "", O: "" });
   const [selectingFirstPlayer, setSelectingFirstPlayer] = useState(false);
   const [firstPlayer, setFirstPlayer] = useState("");
+  const [winPattern, setWinPattern] = useState(null);
 
   const handleEnterGame = (playerX, playerO) => {
     setPlayers({ X: playerX, O: playerO });
@@ -38,13 +39,17 @@ function App() {
       [2, 4, 6],
     ];
 
-    for (const [a, b, c] of winPatterns) {
+    for (const pattern of winPatterns) {
+      const [a, b, c] = pattern;
       if (board[a] && board[a] === board[b] && board[b] === board[c]) {
+        setWinPattern(pattern);
+        console.log("Winning Pattern Set:", pattern);
         handleWin(board[a]);
         return;
       }
     }
     if (!board.includes(null)) {
+      setWinPattern(null);
       handleWin("NoOne");
     }
   };
@@ -56,16 +61,19 @@ function App() {
       setWinner(player === "X" ? players.X : players.O);
     }
     setLock(true);
-    setPage("winPopup");
+    setTimeout(() => {
+      setPage("winPopup");
+    }, 1000);
   };
 
   const toggle = (e, num) => {
     if (lock || data[num]) return;
     const newData = [...data];
-    newData[num] = count % 2 === 0 ? "X" : "O";
+    const symbol = count % 2 === 0 ? "X" : "O";
+    newData[num] = symbol;
     setData(newData);
-    setCount(count + 1);
     checkWin(newData);
+    setCount(count + 1);
   };
 
   const resetGame = () => {
@@ -81,6 +89,7 @@ function App() {
       setFirstPlayer(randomCount === 0 ? players.X : players.O);
       setSelectingFirstPlayer(false);
     }, 2000);
+    setWinPattern(null);
   };
 
   const startNewGame = () => {
@@ -89,6 +98,7 @@ function App() {
     setLock(false);
     setWinner("");
     setPage("starter");
+    setWinPattern(null);
   };
 
   return (
@@ -104,6 +114,7 @@ function App() {
             turn={count}
             player={players}
             firstPlayer={firstPlayer}
+            winPattern={winPattern}
           />
         ))}
       {page === "winPopup" && (

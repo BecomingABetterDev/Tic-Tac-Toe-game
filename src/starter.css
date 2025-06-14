@@ -27,6 +27,7 @@ header {
   font-family: "Trebuchet MS", "Lucida Sans Unicode";
   font-size: 2rem;
   margin-top: 5px;
+  color: #1743d5;
 }
 
 hr {
@@ -38,6 +39,7 @@ hr {
 
 label {
   font: 550 1.2rem "Times";
+  color: #712a92;
 }
 .symbol {
   font: italic 400 1.7rem Georgia;

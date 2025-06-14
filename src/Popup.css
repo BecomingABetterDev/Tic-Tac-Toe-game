@@ -1,54 +1,69 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .popup {
-  z-index: 1;
+  z-index: 999;
   position: fixed;
-  background-color: rgb(168, 18, 161);
-  width: 490px;
-  padding: 0.5rem 0 1.4rem 0;
-  display: flex;
-  border-radius: 7px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 400px;
+  background: linear-gradient(135deg, #0f0f2d, #2e0352);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px #00f7ff, 0 0 50px rgba(0, 255, 255, 0.2);
+  animation: popupFade 0.4s ease-out forwards;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .game-over {
-  font: 700 3rem "Gill Sans", "Gill Sans MT", sans-serif;
-  margin: 0.6rem 0;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 10px #ff0;
+}
+
+.win-statement {
+  font-size: 1.2rem;
+  color: #eeeeee;
+  margin-bottom: 1.5rem;
 }
 
 .winner-span {
-  font: 400 2.1rem "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+  color: #00ffea;
+  font-size: 1.5rem;
+  text-shadow: 0 0 8px #00f7ff;
 }
-.win-statement {
-  font: 200 1.5rem "Courier New", Courier, monospace;
-  margin: 10px 0 2rem 0;
-}
+
 .btn-container {
   display: flex;
-  gap: 9.5rem;
+  justify-content: space-around;
+  margin-top: 1rem;
 }
 
 .btn {
-  cursor: pointer;
-  color: aqua;
-  background-color: rgb(68, 24, 109);
+  padding: 10px 20px;
+  border-radius: 10px;
   border: none;
-  font: 100 20px "Gill Sans";
-  border-radius: 9px;
-  padding: 7px;
+  font-weight: bold;
+  font-size: 1rem;
+  background: #00f7ff;
+  color: #1a1a1a;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00f7ff;
+  transition: transform 0.2s ease, background-color 0.2s;
 }
+
 .btn:hover {
-  transform: translateY(1px);
-  transition: transform 0.02s ease;
+  transform: scale(1.05);
+  background-color: #00ffe0;
 }
