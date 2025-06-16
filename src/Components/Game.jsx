@@ -55,8 +55,6 @@ const Game = ({ toggle, data, player, turn, firstPlayer, winPattern }) => {
                 })}
               </div>
             ))}
-
-            {/* ✅ WINNING LINE */}
             {winPattern && (
               <div className={`win-line ${getLineClass(winPattern)}`}></div>
             )}

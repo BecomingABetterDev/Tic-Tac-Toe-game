@@ -20,7 +20,7 @@ function App() {
     setSelectingFirstPlayer(true);
     setPage("game");
     setTimeout(() => {
-      const randomCount = Math.floor(Math.random() * 2);
+      const randomCount = Math.floor(Math.random() * 2); //0 or 1
       setCount(randomCount);
       setFirstPlayer(randomCount === 0 ? playerX : playerO);
       setSelectingFirstPlayer(false);
@@ -43,7 +43,6 @@ function App() {
       const [a, b, c] = pattern;
       if (board[a] && board[a] === board[b] && board[b] === board[c]) {
         setWinPattern(pattern);
-        console.log("Winning Pattern Set:", pattern);
         handleWin(board[a]);
         return;
       }
@@ -63,7 +62,7 @@ function App() {
     setLock(true);
     setTimeout(() => {
       setPage("winPopup");
-    }, 1000);
+    }, 900);
   };
 
   const toggle = (e, num) => {
@@ -84,7 +83,7 @@ function App() {
     setSelectingFirstPlayer(true);
     setPage("game");
     setTimeout(() => {
-      const randomCount = Math.floor(Math.random() * 2); //0 or 1
+      const randomCount = Math.floor(Math.random() * 2);
       setCount(randomCount);
       setFirstPlayer(randomCount === 0 ? players.X : players.O);
       setSelectingFirstPlayer(false);

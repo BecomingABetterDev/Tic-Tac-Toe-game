@@ -80,7 +80,6 @@
   width: 300px;
   z-index: 3;
   border-radius: 4px;
-  animation: animate-line 0.4s ease forwards;
 }
 
 /* Horizontal lines */
